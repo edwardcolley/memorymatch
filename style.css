@@ -12,16 +12,13 @@ body {
 header {
     height: 10rem;
     text-align: center;
-    font-size: 15vmin;
+    font-size: 12vmin;
     border: 3px solid black;
-}
-
-.row {
-    display: inline-block;
-    border: 2px solid black;
-    width: 100%;
-    height: 33.33%;
-    
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    text-transform: capitalize;
 }
 
 .container {
@@ -43,26 +40,46 @@ main {
     vertical-align: top;
 }
 
-.lfzImage {
-    background-size: cover;
-    background-image: url("assets/images/lfz-card.jpg");
-    width: 200px;
-    height: 200px;
+.card {
+    width: 16%;
+    height: 33.33%;
+    position: relative;
     display: inline-block;
+}
+/* .back2, */
+.back {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 90%;
+}
+.front {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
    
 }
-
-.card1 {
-    background-image: url("assets/images/andy.jpg");
-    background-size: cover;
+.front {
+    background-image: url("assets/images/lfz-card.jpg");
 }
-
-/* .container {
-    border: 2px solid black;
-    height: 200px;
-    width: 400px;
+.back {
+    background-image: url("assets/images/andy.jpg");
+}
+/* .back2 {
+    background-image: url("assets/images/brett.jpg");
 } */
-
+/* .card:hover .front {
+    display: none;
+} */
+.hidden {
+    display: none;
+}
 aside {
     border: 3px solid black;
     height: 80%;
