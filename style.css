@@ -46,13 +46,13 @@ main {
     position: relative;
     display: inline-block;
 }
-/* .back2, */
+.back2,
 .back {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
-    width: 90%;
+    width: 100%;
 }
 .front {
     background-size: cover;
@@ -71,9 +71,9 @@ main {
 .back {
     background-image: url("assets/images/andy.jpg");
 }
-/* .back2 {
+.back2 {
     background-image: url("assets/images/brett.jpg");
-} */
+}
 /* .card:hover .front {
     display: none;
 } */
