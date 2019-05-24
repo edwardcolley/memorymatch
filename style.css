@@ -46,6 +46,7 @@ main {
     position: relative;
     display: inline-block;
 }
+.back3,
 .back2,
 .back {
     background-size: cover;
@@ -69,9 +70,12 @@ main {
     background-image: url("assets/images/lfz-card.jpg");
 }
 .back {
-    background-image: url("assets/images/andy.jpg");
+    background-image: url("assets/images/brett.jpg");
 }
 .back2 {
+    background-image: url("assets/images/andy.jpg");
+}
+.back3 {
     background-image: url("assets/images/brett.jpg");
 }
 /* .card:hover .front {
