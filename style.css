@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    border: 1px solid black;
+   
     background-image: url("assets/images/blind-robot.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,7 +13,7 @@ header {
     height: 10rem;
     text-align: center;
     font-size: 12vmin;
-    border: 3px solid black;
+    
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #FFFFFF;
     font-weight: 700;
@@ -23,7 +23,7 @@ header {
 
 .container {
     display: inline-block;
-    border: 3px solid black;
+    border: 2px solid black;
     /* height: 100vh;
     width: 20%; */
     vertical-align: top;
@@ -36,7 +36,7 @@ main {
     display: inline-block;
     height: 80%;
     width: 70%;
-    border: 2px solid black;
+    
     vertical-align: top;
 }
 
@@ -46,6 +46,7 @@ main {
     position: relative;
     display: inline-block;
 }
+.back4,
 .back3,
 .back2,
 .back {
@@ -72,6 +73,7 @@ main {
 .back {
     background-image: url("assets/images/brett.jpg");
 }
+.back4,
 .back2 {
     background-image: url("assets/images/andy.jpg");
 }
@@ -85,13 +87,15 @@ main {
     display: none;
 }
 aside {
-    border: 3px solid black;
+    border: 2px solid black;
     height: 80%;
     width: 25%;
     display: inline-block;
     margin: 0;
     font-size: 4vmin;
     text-align: center;
+    color: #FFF;
+    /* text-transform: uppercase; */
 }
 
 .aside_div {
@@ -105,4 +109,40 @@ aside {
     background-color: midnightblue;
     color: white;
     opacity: 0.5;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: midnightblue;
+    margin: 20% auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
+    font-size: 3vmin;
+    text-align: center;
+    color: #FFF;
+}
+
+.closeBtn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
