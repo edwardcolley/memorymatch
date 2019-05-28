@@ -1,6 +1,5 @@
 body {
     height: 100vh;
-   
     background-image: url("assets/images/blind-robot.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,7 +12,6 @@ header {
     height: 10rem;
     text-align: center;
     font-size: 12vmin;
-    
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: #FFFFFF;
     font-weight: 700;
@@ -23,9 +21,6 @@ header {
 
 .container {
     display: inline-block;
-    border: 2px solid black;
-    /* height: 100vh;
-    width: 20%; */
     vertical-align: top;
     width: 100%;
     height: 100%;
@@ -46,6 +41,21 @@ main {
     position: relative;
     display: inline-block;
 }
+
+.back18,
+.back17,
+.back16,
+.back15,
+.back14,
+.back13,
+.back12,
+.back11,
+.back10,
+.back9,
+.back8,
+.back7,
+.back6,
+.back5,
 .back4,
 .back3,
 .back2,
@@ -70,6 +80,8 @@ main {
 .front {
     background-image: url("assets/images/lfz-card.jpg");
 }
+
+.back3,
 .back {
     background-image: url("assets/images/brett.jpg");
 }
@@ -77,17 +89,40 @@ main {
 .back2 {
     background-image: url("assets/images/andy.jpg");
 }
-.back3 {
-    background-image: url("assets/images/brett.jpg");
+.back9,
+.back5 {
+    background-image: url("assets/images/bill.jpg");
 }
-/* .card:hover .front {
-    display: none;
-} */
+.back6,
+.back13 {
+    background-image: url("assets/images/cody.jpg");
+}
+.back7,
+.back8 {
+    background-image: url("assets/images/dan.jpg");
+}
+.back10,
+.back18 {
+    background-image: url("assets/images/scott.jpg");
+}
+.back11,
+.back14 {
+    background-image: url("assets/images/tim-d.jpg");
+}
+.back12,
+.back17 {
+    background-image: url("assets/images/tim-h.jpg");
+}
+.back15,
+.back16 {
+    background-image: url("assets/images/tj.jpg");
+}
+
 .hidden {
     display: none;
 }
 aside {
-    border: 2px solid black;
+    border: 2px solid midnightblue;
     height: 80%;
     width: 25%;
     display: inline-block;
@@ -95,7 +130,7 @@ aside {
     font-size: 4vmin;
     text-align: center;
     color: #FFF;
-    /* text-transform: uppercase; */
+    
 }
 
 .aside_div {
