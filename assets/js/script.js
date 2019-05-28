@@ -5,7 +5,7 @@ $(document).ready(function() {
     var firstCardClicked = null;
     var secondCardClicked = null;
     var matched = null;
-    var max_matches = 3;
+    var max_matches = 9;
     var attempts = 0;
     var games_played = null;
 
