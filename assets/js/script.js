@@ -4,7 +4,7 @@ $(document).ready(function() {
     var firstCardClicked = null;
     var secondCardClicked = null;
     var matched = null;
-    var max_matches = 3;
+    var max_matches = 9;
     var attempts = 0;
     var games_played = null;
 
@@ -38,8 +38,13 @@ $(document).ready(function() {
             } else {
                 attempts++;
                 console.log('attempts: ', attempts);
-                firstCardClicked = null;
-                secondCardClicked = null;
+                setTimeout(function(){
+                    $(firstCardClicked).removeClass('hidden');
+                    $(secondCardClicked).removeClass('hidden');
+                    firstCardClicked = null;
+                    secondCardClicked = null;
+                }, 1500)
+            
             }
             
             if (matched === max_matches) {
@@ -82,9 +87,9 @@ $(document).ready(function() {
     }
   
     function calculateAccuracy() {
-        accuracy = matched / attempts;
+        accuracy = (matched / attempts) * 100;
         console.log('accuracy: ', accuracy);
-        return accuracy;
+        return accuracy + "%";
     }
     
 })
