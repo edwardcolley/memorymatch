@@ -1,10 +1,11 @@
 $(document).ready(function() {
-    $('.front').on('click', handleCardClick)
+    $('.front').on('click', handleCardClick);
+    
 
     var firstCardClicked = null;
     var secondCardClicked = null;
     var matched = null;
-    var max_matches = 9;
+    var max_matches = 3;
     var attempts = 0;
     var games_played = null;
 
@@ -22,9 +23,9 @@ $(document).ready(function() {
             siblings2 = secondCardClicked.siblings();
             backCard2 = siblings2.css('background-image');
             
-            displayStats();
-
             
+
+            attempts++;
             
             if (backCard2 === backCard) {
             console.log('They match');
@@ -44,6 +45,7 @@ $(document).ready(function() {
                     firstCardClicked = null;
                     secondCardClicked = null;
                 }, 1500)
+                displayStats();
             
             }
             
@@ -55,13 +57,28 @@ $(document).ready(function() {
            
         }
 
-        function displayStats() {
-            $('#accuracy').text(calculateAccuracy);
-            $('#attempts').text(attempts);
-            $('#games_played').text(games_played);
-
-        }
+        
        
+    }
+
+    function displayStats() {
+        $('#accuracy').text(calculateAccuracy);
+        $('#attempts').text(attempts);
+        $('#games_played').text(games_played);
+
+    }
+
+    function displayStats() {
+        $('#accuracy').text(calculateAccuracy);
+        $('#attempts').text(attempts);
+        $('#games_played').text(games_played);
+
+    }
+    function displayStatsWithoutAccuracy() {
+        $('#accuracy').text('0%');
+        $('#attempts').text(attempts);
+        $('#games_played').text(games_played);
+
     }
     
     var modal = $('#simpleModal');
@@ -71,7 +88,7 @@ $(document).ready(function() {
 
     $(modalBtn).on('click', openModal);
     $(closeBtn).on('click', closeModal);
-    $(window).on('click', clickOutside);
+    // $(window).on('click', clickOutside);
 
     function openModal() {
         console.log('testing');
@@ -79,17 +96,31 @@ $(document).ready(function() {
     }
     function closeModal() {
         modal[0].style.display = 'none';
+        resetStats();
+        console.log('hi');
+        
     }
     function clickOutside(event) {
         if (event.target === modal[0]) {
             modal[0].style.display = 'none';
         }
+        resetStats();
+        console.log('this is outside');
     }
   
     function calculateAccuracy() {
-        accuracy = (matched / attempts) * 100;
+        accuracy = Math.floor((matched / attempts) * 100);
         console.log('accuracy: ', accuracy);
         return accuracy + "%";
+    }
+
+    function resetStats () {
+        matched = null;
+        attempts = null;
+        games_played++;
+        displayStatsWithoutAccuracy();
+        $('div').removeClass('hidden');
+        
     }
     
 })
