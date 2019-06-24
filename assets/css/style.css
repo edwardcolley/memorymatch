@@ -52,23 +52,6 @@ main {
     display: inline-block;
 }
 
-.back18,
-.back17,
-.back16,
-.back15,
-.back14,
-.back13,
-.back12,
-.back11,
-.back10,
-.back9,
-.back8,
-.back7,
-.back6,
-.back5,
-.back4,
-.back3,
-.back2,
 .back {
     background-size: cover;
     background-position: center;
@@ -93,41 +76,46 @@ main {
 .front {
     background-image: url("../images/slothCardBack.jpg");
 }
-
-.back3,
-.back {
+.card1,
+.card10{
     background-image: url("../images/sloth2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    border: 2px solid white;
 }
-.back4,
-.back2 {
+.card2,
+.card11{
     background-image: url("../images/sloth3.jpg");
 }
-.back9,
-.back5 {
+.card3,
+.card12{
     background-image: url("../images/sloth4.jpg");
 }
-.back6,
-.back13 {
+.card4,
+.card13{
     background-image: url("../images/sloth5.jpg");
 }
-.back7,
-.back8 {
+.card5,
+.card14{
     background-image: url("../images/sloth6.jpeg");
 }
-.back10,
-.back18 {
+.card6,
+.card15 {
     background-image: url("../images/sloth7.jpg");
 }
-.back11,
-.back14 {
+.card7,
+.card16 {
     background-image: url("../images/sloth8.jpg");
 }
-.back12,
-.back17 {
+.card8,
+.card17 {
     background-image: url("../images/sloth9.jpg");
 }
-.back15,
-.back16 {
+.card9,
+.card18 {
     background-image: url("../images/sloth10.jpg");
 }
 .gif {
@@ -135,7 +123,6 @@ main {
     top: -4%;
 }
 .sloth_gif {
-    /* height: 80%; */
     width: 85%;
 }
 aside {
