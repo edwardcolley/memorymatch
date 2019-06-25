@@ -2,6 +2,7 @@ $(document).ready(initializeApp)
 
 function initializeApp() {
     $('.front').on('click', handleCardClick);
+    $('.closeBtn').on('click', closeModal);
     placeShuffledCards();
 }
 
@@ -11,7 +12,7 @@ function initializeApp() {
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 3;
+var max_matches = 1;
 var attempts = 0;
 var games_played = null;
 
@@ -26,9 +27,6 @@ function handleCardClick(event) {
         secondCardClicked = $(this)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
-
-
-
         attempts++;
 
         if (backCard2 === backCard) {
@@ -81,22 +79,14 @@ function displayStatsWithoutAccuracy() {
 
 }
 
-var modal = $('#simpleModal');
-var modalBtn = $('#modalBtn');
-var closeBtn = $('.closeBtn')[0];
-
-
-$(modalBtn).on('click', openModal);
-$(closeBtn).on('click', closeModal);
-
 function openModal() {
-
-    modal[0].style.display = 'block';
+    $('#simpleModal').removeClass('hidden');
 }
-function closeModal() {
-    modal[0].style.display = 'none';
-    resetStats();
 
+function closeModal() {
+    debugger;
+    $('#simpleModal').addClass('hidden');
+    resetStats();
 
 }
 function clickOutside(event) {
@@ -115,7 +105,7 @@ function resetStats() {
     matched = null;
     attempts = null;
     displayStatsWithoutAccuracy();
-    $('div').removeClass('hidden');
+    $('div div div').removeClass('hidden');
     placeShuffledCards();
 }
 
