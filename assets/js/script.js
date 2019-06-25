@@ -17,14 +17,13 @@ var attempts = 0;
 var games_played = null;
 
 function handleCardClick(event) {
-    $(this).addClass('hidden');
-
+    $(event.currentTarget).addClass('hidden');
     if (firstCardClicked === null) {
-        firstCardClicked = $(this)
+        firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
     } else if (secondCardClicked === null) {
-        secondCardClicked = $(this)
+        secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
         attempts++;
