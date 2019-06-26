@@ -6,9 +6,6 @@ function initializeApp() {
     placeShuffledCards();
 }
 
-
-
-
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
@@ -29,12 +26,15 @@ function handleCardClick(event) {
         attempts++;
 
         if (backCard2 === backCard) {
+            playRightSound();
             matched++;
             firstCardClicked = null;
             secondCardClicked = null;
 
             displayStats();
         } else {
+            debugger;
+            playWrongSound();
             $('.front').off();
             setTimeout(function () {
                 $(firstCardClicked).removeClass('hidden');
@@ -108,7 +108,7 @@ function resetStats() {
     placeShuffledCards();
 }
 
-// Fisher-Yates (aka Knuth) Shuffle
+// Fisher-Yates Shuffle
 function shuffleCards() {
     var cardArray = ['card1', 'card2','card3','card4','card5','card6','card7','card8','card9',
                     'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
@@ -148,7 +148,16 @@ function placeShuffledCards() {
     $('#back18').addClass(shuffledCards[17])
 }
 
+function playWrongSound() {
+    var bleep = new Audio();
+    bleep.src = "/memory_match/assets/sounds/button-11.mp3";
+    bleep.play();
+}
 
-
+function playRightSound() {
+    var ding = new Audio();
+    ding.src = "/memory_match/assets/sounds/ding-sound-effect_1.mp3";
+    ding.play();
+}
 
 
