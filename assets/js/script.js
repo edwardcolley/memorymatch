@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 1;
+var max_matches = 2;
 var attempts = 0;
 var games_played = null;
 var checkbox1 = null;
@@ -11,11 +11,18 @@ var checkbox2 = null;
 
 function initializeApp() {
     $('.front').on('click', handleCardClick);
+    $('.back').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
+    $('.closeWarningBtn').on('click', closeWarningModal);
     placeShuffledCards();
 }
 
 function handleCardClick(event) {
+    disableReflip = event.target;
+    disableMethod = event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0];
+    if($(disableReflip).hasClass("back")){
+        return $(disableMethod).prop("checked", false);
+    }
 
     if (firstCardClicked === null) {
         console.log(event);
@@ -47,7 +54,7 @@ function handleCardClick(event) {
                 $('.front').on('click', handleCardClick);
                 firstCardClicked = null;
                 secondCardClicked = null;
-            }, 1000)
+            }, 400)
             displayStats();
 
         }
@@ -91,8 +98,12 @@ function openModal() {
 function closeModal() {
     $('#simpleModal').addClass('hidden');
     resetStats();
-
 }
+
+function closeWarningModal() {
+    $('#warningModal').addClass('hidden');
+}
+
 function clickOutside(event) {
     if (event.target === modal[0]) {
         modal[0].style.display = 'none';
@@ -151,6 +162,8 @@ function resetShuffledCards() {
 }
 
 function animateShuffle() {
+    var x = $("#C1").position()
+    console.log("top: " + x.top + " Left: " + x.left);
     $("#C1").animate({ left: "16.4%"});
     $("#C2").animate({ right: "16.4%"});
     $("#C3").animate({ top: "33.8%", right: "16.4%"});
