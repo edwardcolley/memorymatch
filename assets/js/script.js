@@ -1,28 +1,35 @@
 $(document).ready(initializeApp)
 
+var firstCardClicked = null;
+var secondCardClicked = null;
+var matched = null;
+var max_matches = 3;
+var attempts = 0;
+var games_played = null;
+var checkbox1 = null;
+var checkbox2 = null;
+
 function initializeApp() {
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     placeShuffledCards();
 }
 
-var firstCardClicked = null;
-var secondCardClicked = null;
-var matched = null;
-var max_matches = 9;
-var attempts = 0;
-var games_played = null;
-
 function handleCardClick(event) {
-    $(event.currentTarget).addClass('hidden');
+    debugger;
+    // $(event.currentTarget).addClass('hidden');
     if (firstCardClicked === null) {
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
+        checkbox1 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
+        
     } else if (secondCardClicked === null) {
+        console.log("event2", event)
         secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
+        checkbox2 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
         attempts++;
 
         if (backCard2 === backCard) {
@@ -33,12 +40,12 @@ function handleCardClick(event) {
 
             displayStats();
         } else {
-            debugger;
             playWrongSound();
             $('.front').off();
             setTimeout(function () {
-                $(firstCardClicked).removeClass('hidden');
-                $(secondCardClicked).removeClass('hidden');
+                // $(firstCardClicked).removeClass('hidden');
+                // $(secondCardClicked).removeClass('hidden');
+                flipCardBack();
                 $('.front').on('click', handleCardClick);
                 firstCardClicked = null;
                 secondCardClicked = null;
@@ -56,6 +63,11 @@ function handleCardClick(event) {
 
 
 
+};
+
+function flipCardBack() {
+    (checkbox1).prop("checked", false);
+    (checkbox2).prop("checked", false);
 }
 
 function displayStats() {
@@ -83,7 +95,6 @@ function openModal() {
 }
 
 function closeModal() {
-    debugger;
     $('#simpleModal').addClass('hidden');
     resetStats();
 
@@ -96,7 +107,7 @@ function clickOutside(event) {
 }
 
 function calculateAccuracy() {
-    accuracy = Math.floor((matched / attempts) * 100);
+    accuracy = ((matched / attempts) * 100).toFixed(2);
     return accuracy + "%";
 }
 
@@ -127,7 +138,6 @@ function shuffleCards() {
 
 function placeShuffledCards() {
     var shuffledCards = shuffleCards();
-
     $('#back1').addClass(shuffledCards[0])
     $('#back2').addClass(shuffledCards[1])
     $('#back3').addClass(shuffledCards[2])
@@ -147,6 +157,29 @@ function placeShuffledCards() {
     $('#back17').addClass(shuffledCards[16])
     $('#back18').addClass(shuffledCards[17])
 }
+
+// function resetShuffledCards() {
+//     $('#back1').removeClass()
+//     $('#back2').removeClass()
+//     $('#back3').removeClass()
+//     $('#back4').removeClass()
+//     $('#back5').removeClass()
+//     $('#back6').removeClass()
+//     $('#back7').removeClass()
+//     $('#back8').removeClass()
+//     $('#back9').removeClass()
+//     $('#back10').removeClass()
+//     $('#back11').removeClass()
+//     $('#back12').removeClass()
+//     $('#back13').removeClass()
+//     $('#back14').removeClass()
+//     $('#back15').removeClass()
+//     $('#back16').removeClass()
+//     $('#back17').removeClass()
+//     $('#back18').removeClass()
+
+//     placeShuffledCards();
+// }
 
 function playWrongSound() {
     var bleep = new Audio();
