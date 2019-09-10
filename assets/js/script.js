@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 3;
+var max_matches = 1;
 var attempts = 0;
 var games_played = null;
 var checkbox1 = null;
@@ -16,14 +16,14 @@ function initializeApp() {
 }
 
 function handleCardClick(event) {
-    debugger;
-    // $(event.currentTarget).addClass('hidden');
+
     if (firstCardClicked === null) {
+        console.log(event);
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
         checkbox1 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
-        
+
     } else if (secondCardClicked === null) {
         console.log("event2", event)
         secondCardClicked = $(event.currentTarget)
@@ -43,8 +43,6 @@ function handleCardClick(event) {
             playWrongSound();
             $('.front').off();
             setTimeout(function () {
-                // $(firstCardClicked).removeClass('hidden');
-                // $(secondCardClicked).removeClass('hidden');
                 flipCardBack();
                 $('.front').on('click', handleCardClick);
                 firstCardClicked = null;
@@ -58,11 +56,7 @@ function handleCardClick(event) {
             games_played++;
             openModal();
         }
-
     }
-
-
-
 };
 
 function flipCardBack() {
@@ -112,18 +106,20 @@ function calculateAccuracy() {
 }
 
 function resetStats() {
+    // debugger;
     matched = null;
     attempts = null;
     displayStatsWithoutAccuracy();
-    $('div div div').removeClass('hidden');
-    placeShuffledCards();
+    $('input').prop("checked", false)
+    resetShuffledCards();
+    animateShuffle();
+    
 }
 
-// Fisher-Yates Shuffle
 function shuffleCards() {
-    var cardArray = ['card1', 'card2','card3','card4','card5','card6','card7','card8','card9',
-                    'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
-                    'card18'];
+    var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
+        'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
+        'card18'];
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -138,48 +134,42 @@ function shuffleCards() {
 
 function placeShuffledCards() {
     var shuffledCards = shuffleCards();
-    $('#back1').addClass(shuffledCards[0])
-    $('#back2').addClass(shuffledCards[1])
-    $('#back3').addClass(shuffledCards[2])
-    $('#back4').addClass(shuffledCards[3])
-    $('#back5').addClass(shuffledCards[4])
-    $('#back6').addClass(shuffledCards[5])
-    $('#back7').addClass(shuffledCards[6])
-    $('#back8').addClass(shuffledCards[7])
-    $('#back9').addClass(shuffledCards[8])
-    $('#back10').addClass(shuffledCards[9])
-    $('#back11').addClass(shuffledCards[10])
-    $('#back12').addClass(shuffledCards[11])
-    $('#back13').addClass(shuffledCards[12])
-    $('#back14').addClass(shuffledCards[13])
-    $('#back15').addClass(shuffledCards[14])
-    $('#back16').addClass(shuffledCards[15])
-    $('#back17').addClass(shuffledCards[16])
-    $('#back18').addClass(shuffledCards[17])
+    //  ;
+    for (var i = 0; i <= 17; i++) {
+        $(`#back${i+1}`).addClass(`back flip-card-back ${shuffledCards[i]}`);
+    }
 }
 
-// function resetShuffledCards() {
-//     $('#back1').removeClass()
-//     $('#back2').removeClass()
-//     $('#back3').removeClass()
-//     $('#back4').removeClass()
-//     $('#back5').removeClass()
-//     $('#back6').removeClass()
-//     $('#back7').removeClass()
-//     $('#back8').removeClass()
-//     $('#back9').removeClass()
-//     $('#back10').removeClass()
-//     $('#back11').removeClass()
-//     $('#back12').removeClass()
-//     $('#back13').removeClass()
-//     $('#back14').removeClass()
-//     $('#back15').removeClass()
-//     $('#back16').removeClass()
-//     $('#back17').removeClass()
-//     $('#back18').removeClass()
+function resetShuffledCards() {
 
-//     placeShuffledCards();
-// }
+    for (var i = 1; i <= 18; i++) {
+        $(`#back${i}`).removeClass();
+    }
+
+    placeShuffledCards();
+    animateShuffle();
+}
+
+function animateShuffle() {
+    $("#C1").animate({ left: "16.4%"});
+    $("#C2").animate({ right: "16.4%"});
+    $("#C3").animate({ top: "33.8%", right: "16.4%"});
+    $("#C4").animate({ top: "67.6%"});
+    $("#C5").animate({ left: "16.4%", top: "67.6%"});
+    $("#C6").animate({ right: "49.2%"});
+    $("#C7").animate({ bottom: "33.8%", left: "81.8%"});
+    $("#C8").animate({ right: "16.4%"});
+    $("#C13").animate({ left: "49.2%", bottom: "67.6%"});
+    $("#C18").animate({ right: "16.4%", bottom: "67.6%"});
+    $("#C9").animate({ top: "33.8%", left: "32.8%"});
+    $("#C10").animate({ top: "33.8%", right: "49.2%"});
+    $("#C11").animate({ top: "33.8%", right: "32.8%"});
+    $("#C12").animate({ right: "49.2%"});
+    $("#C14").animate({ left: "65.6%", bottom: "33.8%"});
+    $("#C15").animate({ right: "16.4%"});
+    $("#C16").animate({ bottom: "33.8%", left: "16.4%"});
+    $("#C17").animate({ bottom: "33.8%", right: "16.4%"});
+}
 
 function playWrongSound() {
     var bleep = new Audio();
