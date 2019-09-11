@@ -25,14 +25,12 @@ function handleCardClick(event) {
     }
 
     if (firstCardClicked === null) {
-        console.log(event);
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
         checkbox1 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
 
     } else if (secondCardClicked === null) {
-        console.log("event2", event)
         secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
@@ -54,7 +52,7 @@ function handleCardClick(event) {
                 $('.front').on('click', handleCardClick);
                 firstCardClicked = null;
                 secondCardClicked = null;
-            }, 400)
+            }, 500)
             displayStats();
 
         }
@@ -117,13 +115,12 @@ function calculateAccuracy() {
 }
 
 function resetStats() {
-    // debugger;
     matched = null;
     attempts = null;
     displayStatsWithoutAccuracy();
     $('input').prop("checked", false)
     resetShuffledCards();
-    animateShuffle();
+    // animateShuffle();
     
 }
 
@@ -161,28 +158,28 @@ function resetShuffledCards() {
     animateShuffle();
 }
 
-function animateShuffle() {
-    var x = $("#C1").position()
-    console.log("top: " + x.top + " Left: " + x.left);
-    $("#C1").animate({ left: "16.4%"});
-    $("#C2").animate({ right: "16.4%"});
-    $("#C3").animate({ top: "33.8%", right: "16.4%"});
-    $("#C4").animate({ top: "67.6%"});
-    $("#C5").animate({ left: "16.4%", top: "67.6%"});
-    $("#C6").animate({ right: "49.2%"});
-    $("#C7").animate({ bottom: "33.8%", left: "81.8%"});
-    $("#C8").animate({ right: "16.4%"});
-    $("#C13").animate({ left: "49.2%", bottom: "67.6%"});
-    $("#C18").animate({ right: "16.4%", bottom: "67.6%"});
-    $("#C9").animate({ top: "33.8%", left: "32.8%"});
-    $("#C10").animate({ top: "33.8%", right: "49.2%"});
-    $("#C11").animate({ top: "33.8%", right: "32.8%"});
-    $("#C12").animate({ right: "49.2%"});
-    $("#C14").animate({ left: "65.6%", bottom: "33.8%"});
-    $("#C15").animate({ right: "16.4%"});
-    $("#C16").animate({ bottom: "33.8%", left: "16.4%"});
-    $("#C17").animate({ bottom: "33.8%", right: "16.4%"});
-}
+// function animateShuffle() {
+//     var x = $("#C1").position()
+//     console.log("top: " + x.top + " Left: " + x.left);
+//     $("#C1").animate({ left: "16.4%"});
+//     $("#C2").animate({ right: "16.4%"});
+//     $("#C3").animate({ top: "33.8%", right: "16.4%"});
+//     $("#C4").animate({ top: "67.6%"});
+//     $("#C5").animate({ left: "16.4%", top: "67.6%"});
+//     $("#C6").animate({ right: "49.2%"});
+//     $("#C7").animate({ bottom: "33.8%", left: "81.8%"});
+//     $("#C8").animate({ right: "16.4%"});
+//     $("#C13").animate({ left: "49.2%", bottom: "67.6%"});
+//     $("#C18").animate({ right: "16.4%", bottom: "67.6%"});
+//     $("#C9").animate({ top: "33.8%", left: "32.8%"});
+//     $("#C10").animate({ top: "33.8%", right: "49.2%"});
+//     $("#C11").animate({ top: "33.8%", right: "32.8%"});
+//     $("#C12").animate({ right: "49.2%"});
+//     $("#C14").animate({ left: "65.6%", bottom: "33.8%"});
+//     $("#C15").animate({ right: "16.4%"});
+//     $("#C16").animate({ bottom: "33.8%", left: "16.4%"});
+//     $("#C17").animate({ bottom: "33.8%", right: "16.4%"});
+// }
 
 function playWrongSound() {
     var bleep = new Audio();
