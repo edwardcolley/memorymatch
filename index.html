@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <title>Memory Match</title>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -15,6 +16,9 @@
 
     <aside>
         <div class="aside_title">Stats</div>
+        <div class="resetContainer">    
+         <button class="resetBtn">Reset Game</button>
+        </div>
         <div class="aside_div">
             <p>Games Played:</p>
             <p id="games_played"></p>
@@ -34,7 +38,6 @@
 
     <main>
         <label class="card flip-card" id="C1">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back1"></div>
                 <div class="front flip-card-front"></div>
@@ -42,7 +45,6 @@
         </label>
 
         <label class="card flip-card" id="C2">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back2"></div>
                 <div class="front flip-card-front"></div>
@@ -50,7 +52,6 @@
         </label>
 
         <label class="card flip-card" id="C3">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back3"></div>
                 <div class="front flip-card-front"></div>
@@ -58,7 +59,6 @@
         </label>
 
         <label class="card flip-card" id="C4">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back4"></div>
                 <div class="front flip-card-front"></div>
@@ -66,7 +66,6 @@
         </label>
 
         <label class="card flip-card" id="C5">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back5"></div>
                 <div class="front flip-card-front"></div>
@@ -74,7 +73,6 @@
         </label>
 
         <label class="card flip-card" id="C6">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back6"></div>
                 <div class="front flip-card-front"></div>
@@ -82,7 +80,6 @@
         </label>
 
         <label class="card flip-card" id="C7">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back7"></div>
                 <div class="front flip-card-front"></div>
@@ -90,7 +87,6 @@
         </label>
 
         <label class="card flip-card" id="C8">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back8"></div>
                 <div class="front flip-card-front"></div>
@@ -98,7 +94,6 @@
         </label>
 
         <label class="card flip-card" id="C9">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back9"></div>
                 <div class="front flip-card-front"></div>
@@ -106,7 +101,6 @@
         </label>
 
         <label class="card flip-card" id="C10">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back10"></div>
                 <div class="front flip-card-front"></div>
@@ -114,7 +108,6 @@
         </label>
 
         <label class="card flip-card" id="C11">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back11"></div>
                 <div class="front flip-card-front"></div>
@@ -122,7 +115,6 @@
         </label>
 
         <label class="card flip-card" id="C12">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back12"></div>
                 <div class="front flip-card-front"></div>
@@ -130,7 +122,6 @@
         </label>
 
         <label class="card flip-card" id="C13">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back13"></div>
                 <div class="front flip-card-front"></div>
@@ -138,7 +129,6 @@
         </label>
 
         <label class="card flip-card" id="C14">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back14"></div>
                 <div class="front flip-card-front"></div>
@@ -146,7 +136,6 @@
         </label>
 
         <label class="card flip-card" id="C15">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back15"></div>
                 <div class="front flip-card-front"></div>
@@ -154,7 +143,6 @@
         </label>
 
         <label class="card flip-card" id="C16">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back16"></div>
                 <div class="front flip-card-front"></div>
@@ -162,7 +150,6 @@
         </label>
 
         <label class="card flip-card" id="C17">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back17"></div>
                 <div class="front flip-card-front"></div>
@@ -170,7 +157,6 @@
         </label>
 
         <label class="card flip-card" id="C18">
-            <input type="checkbox">
             <div class="flip-card-inner">
                 <div class="back flip-card-back" id="back18"></div>
                 <div class="front flip-card-front"></div>
@@ -178,7 +164,7 @@
         </label>
 
 
-        <div id="simpleModal" class="modal hidden">
+        <div id="simpleModal" class="w3-modal-content w3-animate-top w3-card-4 modal hidden">
 
             <div class="modal-content">
                 <p>Congratulations! You have won!!!</p>

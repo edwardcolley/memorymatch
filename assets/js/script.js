@@ -3,38 +3,35 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 2;
+var max_matches = 1;
 var attempts = 0;
 var games_played = null;
-var checkbox1 = null;
-var checkbox2 = null;
+var check1 = null;
+var check2 = null;
 
 function initializeApp() {
     $('.front').on('click', handleCardClick);
-    $('.back').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeWarningBtn').on('click', closeWarningModal);
+    $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
 }
 
 function handleCardClick(event) {
-    disableReflip = event.target;
-    disableMethod = event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0];
-    if($(disableReflip).hasClass("back")){
-        return $(disableMethod).prop("checked", false);
-    }
 
     if (firstCardClicked === null) {
+        check1 = event.target.parentElement
+        $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
-        checkbox1 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
 
     } else if (secondCardClicked === null) {
+        check2 = event.target.parentElement
+        $(check2).addClass('flipaction');
         secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
-        checkbox2 = $(event.delegateTarget.parentElement.offsetParent.children[1].parentElement.children[0]);
         attempts++;
 
         if (backCard2 === backCard) {
@@ -42,17 +39,16 @@ function handleCardClick(event) {
             matched++;
             firstCardClicked = null;
             secondCardClicked = null;
-
             displayStats();
         } else {
             playWrongSound();
-            $('.front').off();
+            $('.front').off("click");
             setTimeout(function () {
                 flipCardBack();
                 $('.front').on('click', handleCardClick);
                 firstCardClicked = null;
                 secondCardClicked = null;
-            }, 500)
+            }, 1000)
             displayStats();
 
         }
@@ -65,8 +61,12 @@ function handleCardClick(event) {
 };
 
 function flipCardBack() {
-    (checkbox1).prop("checked", false);
-    (checkbox2).prop("checked", false);
+    $(check1).removeClass('flipaction');
+    $(check2).removeClass('flipaction');
+}
+
+function resetGame() {
+    location.reload();
 }
 
 function displayStats() {
@@ -76,12 +76,6 @@ function displayStats() {
 
 }
 
-function displayStats() {
-    $('#accuracy').text(calculateAccuracy);
-    $('#attempts').text(attempts);
-    $('#games_played').text(games_played);
-
-}
 function displayStatsWithoutAccuracy() {
     $('#accuracy').text('0%');
     $('#attempts').text(attempts);
@@ -118,9 +112,9 @@ function resetStats() {
     matched = null;
     attempts = null;
     displayStatsWithoutAccuracy();
-    $('input').prop("checked", false)
+    $('div').removeClass("flipaction")
     resetShuffledCards();
-    // animateShuffle();
+    animateShuffle();
     
 }
 
@@ -142,7 +136,7 @@ function shuffleCards() {
 
 function placeShuffledCards() {
     var shuffledCards = shuffleCards();
-    //  ;
+
     for (var i = 0; i <= 17; i++) {
         $(`#back${i+1}`).addClass(`back flip-card-back ${shuffledCards[i]}`);
     }
@@ -155,31 +149,7 @@ function resetShuffledCards() {
     }
 
     placeShuffledCards();
-    animateShuffle();
 }
-
-// function animateShuffle() {
-//     var x = $("#C1").position()
-//     console.log("top: " + x.top + " Left: " + x.left);
-//     $("#C1").animate({ left: "16.4%"});
-//     $("#C2").animate({ right: "16.4%"});
-//     $("#C3").animate({ top: "33.8%", right: "16.4%"});
-//     $("#C4").animate({ top: "67.6%"});
-//     $("#C5").animate({ left: "16.4%", top: "67.6%"});
-//     $("#C6").animate({ right: "49.2%"});
-//     $("#C7").animate({ bottom: "33.8%", left: "81.8%"});
-//     $("#C8").animate({ right: "16.4%"});
-//     $("#C13").animate({ left: "49.2%", bottom: "67.6%"});
-//     $("#C18").animate({ right: "16.4%", bottom: "67.6%"});
-//     $("#C9").animate({ top: "33.8%", left: "32.8%"});
-//     $("#C10").animate({ top: "33.8%", right: "49.2%"});
-//     $("#C11").animate({ top: "33.8%", right: "32.8%"});
-//     $("#C12").animate({ right: "49.2%"});
-//     $("#C14").animate({ left: "65.6%", bottom: "33.8%"});
-//     $("#C15").animate({ right: "16.4%"});
-//     $("#C16").animate({ bottom: "33.8%", left: "16.4%"});
-//     $("#C17").animate({ bottom: "33.8%", right: "16.4%"});
-// }
 
 function playWrongSound() {
     var bleep = new Audio();

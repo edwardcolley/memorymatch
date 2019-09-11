@@ -153,19 +153,21 @@
         width: 70%;
     }
     aside {
-        border: 4px solid white;
+        background-color: rgba(131, 212, 225, .4);
         height: 81%;
-        width: 25%;
+        width: 20%;
         display: inline-block;
-        margin: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         line-height:80%;
         color: #FFF;
         text-shadow: 2px 2px 2px #1C6EA4;
         
     }
     .aside_title {
+        margin-top: 2%;
         height: 5%;
-        font-size: 24px;
+        font-size: 2.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -388,19 +390,21 @@
         width: 70%;
     }
     aside {
-        border: 4px solid white;
+        background-color: rgba(131, 212, 225, .4);
         height: 81%;
-        width: 25%;
+        width: 20%;
         display: inline-block;
-        margin: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         line-height:80%;
         color: #FFF;
         text-shadow: 2px 2px 2px #1C6EA4;
         
     }
     .aside_title {
+        margin-top: 2%;
         height: 5%;
-        font-size: 24px;
+        font-size: 2.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -409,10 +413,10 @@
     }
     .aside_div {
         border: 2px solid black;
-        height: 12vh;
+        height: 9vh;
         padding-right: 10%;
         margin-left: 10%;
-        margin-top: 5%;
+        margin-top: 10%;
         width: 80%;
         font-size: 20;
         background-color: midnightblue;
@@ -424,7 +428,23 @@
         justify-content: space-around;
     }
     
+    .resetContainer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 12%;
+    }
     
+    .resetBtn {
+        height: 25px;
+        width: 90px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: lightblue;
+        border: 2px solid midnightblue;
+    }
+
     .modal {
         position: fixed;
         z-index: 1;
@@ -450,13 +470,15 @@
     .closeBtn {
       font-size: 1rem;
       cursor: pointer;
-      background-color: white;
+      color: black;
     }
     
+    .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
     }
@@ -621,19 +643,21 @@
         width: 95%;
     }
     aside {
-        border: 4px solid white;
+        background-color: rgba(131, 212, 225, .4);
         height: 81%;
-        width: 25%;
+        width: 20%;
         display: inline-block;
-        margin: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         line-height:80%;
         color: #FFF;
         text-shadow: 2px 2px 2px #1C6EA4;
         
     }
     .aside_title {
+        margin-top: 2%;
         height: 5%;
-        font-size: 24px;
+        font-size: 2.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -642,10 +666,10 @@
     }
     .aside_div {
         border: 2px solid black;
-        height: 12vh;
+        height: 10vh;
         padding-right: 10%;
         margin-left: 10%;
-        margin-top: 5%;
+        margin-top: 10%;
         width: 80%;
         font-size: 20;
         background-color: midnightblue;
@@ -657,7 +681,23 @@
         justify-content: space-around;
     }
     
+    .resetContainer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 8%;
+    }
     
+    .resetBtn {
+        height: 30px;
+        width: 95px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: lightblue;
+        border: 2px solid midnightblue;
+    }
+
     .modal {
         position: fixed;
         z-index: 1;
@@ -683,13 +723,15 @@
     .closeBtn {
       font-size: 1rem;
       cursor: pointer;
-      background-color: white;
+      color: black;
     }
     
+    .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
     }
@@ -854,19 +896,21 @@
         width: 70%;
     }
     aside {
-        border: 4px solid white;
+        background-color: rgba(131, 212, 225, .4);
         height: 81%;
-        width: 25%;
+        width: 20%;
         display: inline-block;
-        margin: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         line-height:80%;
         color: #FFF;
         text-shadow: 2px 2px 2px #1C6EA4;
         
     }
     .aside_title {
+        margin-top: 2%;
         height: 5%;
-        font-size: 24px;
+        font-size: 2.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -890,7 +934,23 @@
         justify-content: space-around;
     }
     
+    .resetContainer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 8%;
+    }
     
+    .resetBtn {
+        height: 35px;
+        width: 100px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: lightblue;
+        border: 2px solid midnightblue;
+    }
+
     .modal {
         position: fixed;
         z-index: 1;
@@ -904,11 +964,11 @@
     
     .modal-content {
         background-color: midnightblue;
-        margin: 45% auto;
-        padding: 100px;
-        width: 70%;
+        margin: 20% auto;
+        padding: 50px;
+        width: 50%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         text-align: center;
         color: #FFF;
     }
@@ -916,13 +976,15 @@
     .closeBtn {
       font-size: 1rem;
       cursor: pointer;
-      color: white;
+      color: black;
     }
     
+    .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
     }
@@ -939,7 +1001,7 @@
     }
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-device-width: 1025px) {
 
     body {
         height: 100vh;
@@ -1024,7 +1086,7 @@
         transform-style: preserve-3d;
     }
     
-    :checked + .flip-card-inner {
+    .flip-card-inner.flipaction {
         transform: rotateY(180deg);
     }
     
@@ -1091,17 +1153,19 @@
         width: 89%;
     }
     aside {
-        border: 4px solid white;
+        background-color: rgba(131, 212, 225, .4);
         height: 81%;
-        width: 25%;
+        width: 20%;
         display: inline-block;
-        margin: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         line-height:80%;
         color: #FFF;
         text-shadow: 2px 2px 2px #1C6EA4;
         
     }
     .aside_title {
+        margin-top: 2%;
         height: 5%;
         font-size: 2.5rem;
         display: flex;
@@ -1127,7 +1191,23 @@
         justify-content: space-around;
     }
     
+    .resetContainer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 8%;
+    }
     
+    .resetBtn {
+        height: 35px;
+        width: 100px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: lightblue;
+        border: 2px solid midnightblue;
+    }
+
     .modal {
         position: fixed;
         z-index: 1;
@@ -1137,6 +1217,7 @@
         width: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.5);
+        border-radius: 30px;
     }
     
     .modal-content {
@@ -1156,10 +1237,12 @@
       color: black;
     }
     
+    .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
     }
