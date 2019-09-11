@@ -84,11 +84,11 @@ function displayStatsWithoutAccuracy() {
 }
 
 function openModal() {
-    $('#simpleModal').removeClass('hidden');
+    $('#winningModal').removeClass('hidden');
 }
 
 function closeModal() {
-    $('#simpleModal').addClass('hidden');
+    $('#winningModal').addClass('hidden');
     resetStats();
 }
 
@@ -114,7 +114,6 @@ function resetStats() {
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
-    animateShuffle();
     
 }
 

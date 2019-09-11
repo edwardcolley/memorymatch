@@ -87,7 +87,7 @@
         transform-style: preserve-3d;
     }
     
-    :checked + .flip-card-inner {
+    .flip-card-inner.flipaction {
         transform: rotateY(180deg);
     }
     
@@ -191,7 +191,17 @@
         justify-content: space-around;
     }
     
-    
+    .closeBtn,
+    .resetBtn {
+        height: 35px;
+        width: 100px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: lightblue;
+        border: 2px solid midnightblue;
+    }
+
     .modal {
         position: fixed;
         z-index: 1;
@@ -201,15 +211,17 @@
         width: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.5);
+        border-radius: 30px;
     }
     
     .modal-content {
         background-color: midnightblue;
-        margin: 60% auto;
-        padding: 100px;
-        width: 70%;
+        opacity: .8;
+        margin: 15% auto;
+        padding: 50px;
+        width: 40%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         text-align: center;
         color: #FFF;
     }
@@ -324,7 +336,7 @@
         transform-style: preserve-3d;
     }
     
-    :checked + .flip-card-inner {
+    .flip-card-inner.flipaction {
         transform: rotateY(180deg);
     }
     
@@ -435,6 +447,7 @@
         margin-top: 12%;
     }
     
+    .closeBtn,
     .resetBtn {
         height: 25px;
         width: 90px;
@@ -454,23 +467,19 @@
         width: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.5);
+        border-radius: 30px;
     }
     
     .modal-content {
         background-color: midnightblue;
-        margin: 20% auto;
+        opacity: .8;
+        margin: 15% auto;
         padding: 50px;
-        width: 50%;
+        width: 40%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
-    }
-    
-    .closeBtn {
-      font-size: 1rem;
-      cursor: pointer;
-      color: black;
     }
     
     .resetBtn:hover,
@@ -576,7 +585,7 @@
         transform-style: preserve-3d;
     }
     
-    :checked + .flip-card-inner {
+    .flip-card-inner.flipaction {
         transform: rotateY(180deg);
     }
     
@@ -688,6 +697,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn,
     .resetBtn {
         height: 30px;
         width: 95px;
@@ -707,24 +717,21 @@
         width: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.5);
+        border-radius: 30px;
     }
     
     .modal-content {
         background-color: midnightblue;
-        margin: 20% auto;
+        opacity: .8;
+        margin: 15% auto;
         padding: 50px;
-        width: 50%;
+        width: 40%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
     }
     
-    .closeBtn {
-      font-size: 1rem;
-      cursor: pointer;
-      color: black;
-    }
     
     .resetBtn:hover,
     .closeBtn:hover {
@@ -830,7 +837,7 @@
         transform-style: preserve-3d;
     }
     
-    :checked + .flip-card-inner {
+    .flip-card-inner.flipaction {
         transform: rotateY(180deg);
     }
     
@@ -941,6 +948,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn,
     .resetBtn {
         height: 35px;
         width: 100px;
@@ -960,23 +968,19 @@
         width: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.5);
+        border-radius: 30px;
     }
     
     .modal-content {
         background-color: midnightblue;
-        margin: 20% auto;
+        opacity: .8;
+        margin: 15% auto;
         padding: 50px;
-        width: 50%;
+        width: 40%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
-    }
-    
-    .closeBtn {
-      font-size: 1rem;
-      cursor: pointer;
-      color: black;
     }
     
     .resetBtn:hover,
@@ -1198,6 +1202,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn,
     .resetBtn {
         height: 35px;
         width: 100px;
@@ -1222,19 +1227,14 @@
     
     .modal-content {
         background-color: midnightblue;
-        margin: 20% auto;
+        opacity: .8;
+        margin: 15% auto;
         padding: 50px;
-        width: 50%;
+        width: 40%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
-    }
-    
-    .closeBtn {
-      font-size: 1rem;
-      cursor: pointer;
-      color: black;
     }
     
     .resetBtn:hover,
