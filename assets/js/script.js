@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var games_played = null;
 var check1 = null;
@@ -152,13 +152,13 @@ function resetShuffledCards() {
 
 function playWrongSound() {
     var bleep = new Audio();
-    bleep.src = "/memory_match/assets/sounds/button-11.mp3";
+    bleep.src = "assets/sounds/button-11.mp3";
     bleep.play();
 }
 
 function playRightSound() {
     var ding = new Audio();
-    ding.src = "/memory_match/assets/sounds/ding-sound-effect_1.mp3";
+    ding.src = "assets/sounds/ding-sound-effect_1.mp3";
     ding.play();
 }
 
