@@ -191,6 +191,7 @@
         justify-content: space-around;
     }
     
+    .closeBtn2,
     .closeBtn,
     .resetBtn {
         height: 35px;
@@ -226,16 +227,19 @@
         color: #FFF;
     }
     
+    .closeBtn2,
     .closeBtn {
       font-size: 1rem;
       cursor: pointer;
       color: white;
     }
     
+    .closeBtn2:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .closeBtn2:active,
     .closeBtn:active {
       background: #144e75;
     }
@@ -430,7 +434,7 @@
         margin-left: 10%;
         margin-top: 10%;
         width: 80%;
-        font-size: 20;
+        font-size: .65rem;
         background-color: midnightblue;
         color: white;
         opacity: 0.7;
@@ -447,6 +451,7 @@
         margin-top: 12%;
     }
     
+    .closeBtn2,
     .closeBtn,
     .resetBtn {
         height: 25px;
@@ -482,11 +487,13 @@
         color: #FFF;
     }
     
+    .closeBtn2:hover,
     .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .closeBtn2:active,
     .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
@@ -697,6 +704,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn2,
     .closeBtn,
     .resetBtn {
         height: 30px;
@@ -732,12 +740,13 @@
         color: #FFF;
     }
     
-    
+    .closeBtn2:hover,
     .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .closeBtn2:active,
     .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
@@ -948,6 +957,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn2,
     .closeBtn,
     .resetBtn {
         height: 35px;
@@ -983,11 +993,13 @@
         color: #FFF;
     }
     
+    .closeBtn2:hover,
     .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .closeBtn2:active,
     .resetBtn:active,
     .closeBtn:active {
       background: #144e75;
@@ -1202,6 +1214,7 @@
         margin-top: 8%;
     }
     
+    .closeBtn2,
     .closeBtn,
     .resetBtn {
         height: 35px;
@@ -1237,11 +1250,13 @@
         color: #FFF;
     }
     
+    .closeBtn2:hover,
     .resetBtn:hover,
     .closeBtn:hover {
       background:#1c6ea4;
     }
     
+    .closeBtn2:active,
     .resetBtn:active,
     .closeBtn:active {
       background: #144e75;

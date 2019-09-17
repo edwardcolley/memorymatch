@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var games_played = null;
 var check1 = null;
@@ -12,6 +12,7 @@ var check2 = null;
 function initializeApp() {
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
+    $('.closeBtn2').on('click', closeModalDone);
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
@@ -90,6 +91,10 @@ function openModal() {
 function closeModal() {
     $('#winningModal').addClass('hidden');
     resetStats();
+}
+
+function closeModalDone() {
+    $('#winningModal').addClass('hidden');
 }
 
 function closeWarningModal() {
