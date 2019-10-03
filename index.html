@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <title>Memory Match</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <!-- <script src="assets/js/game.js"></script>
+    <script src="assets/js/main.js"></script> -->
+    <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <header>Super Sloth Memory Match</header>
+
+    <aside>
+        <div class="aside_title">Stats</div>
+        <div class="resetContainer">    
+         <button class="resetBtn">Reset Game</button>
+        </div>
+        <div class="aside_div">
+            <p>Games Played:</p>
+            <p id="games_played"></p>
+        </div>
+        <div class="aside_div">
+            <p>Attempts:</p>
+            <p id="attempts"></p>
+        </div>
+        <div class="aside_div">
+            <p>Accuracy:</p>
+            <p id="accuracy"></p>
+        </div>
+        <div class="gif">
+            <img src="./assets/images/slothgif.gif" class="sloth_gif">
+        </div>
+    </aside>
+
+    <main>
+        <label class="card flip-card" id="C1">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back1"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C2">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back2"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C3">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back3"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C4">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back4"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C5">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back5"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C6">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back6"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C7">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back7"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C8">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back8"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C9">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back9"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C10">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back10"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C11">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back11"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C12">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back12"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C13">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back13"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C14">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back14"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C15">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back15"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C16">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back16"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C17">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back17"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+        <label class="card flip-card" id="C18">
+            <div class="flip-card-inner">
+                <div class="back flip-card-back" id="back18"></div>
+                <div class="front flip-card-front"></div>
+            </div>
+        </label>
+
+
+        <div id="winningModal" class="w3-modal-content w3-animate-top w3-card-4 modal hidden">
+            <header class="w3-container w3-teal">
+              <p>Congratulations! You have won!!!</p>
+            </header>
+            <div class="modal-content">
+                <p>Would you like to play again?</p>
+                <div>
+                    <button class="closeBtn">Yes</button>
+                    <button class="closeBtn2">No</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="warningModal" class="modal">
+
+            <div class="warning modal-content">
+                <p class="warning-text">This game is best played in landscape mode</p>
+                <button class="closeWarningBtn">close</button>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
