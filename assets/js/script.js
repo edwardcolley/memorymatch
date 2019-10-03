@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var games_played = null;
 var check1 = null;
@@ -21,11 +21,16 @@ function initializeApp() {
 function handleCardClick(event) {
 
     if (firstCardClicked === null) {
+        console.log(event)
         check1 = event.target.parentElement
         $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
+        $(event.target).off("click");
+        setTimeout(function () {
+            $(event.target).on('click', handleCardClick)
+        }, 1000)
 
     } else if (secondCardClicked === null) {
         check2 = event.target.parentElement
