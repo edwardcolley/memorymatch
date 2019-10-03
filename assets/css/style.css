@@ -51,6 +51,11 @@
         display: inline-block;
     }
     
+    .back,
+    .front {
+        border-radius: 8px;
+    }
+
     .back {
         background-size: cover;
         background-position: center;
@@ -218,11 +223,11 @@
     .modal-content {
         background-color: midnightblue;
         opacity: .8;
-        margin: 15% auto;
+        margin: 65% auto;
         padding: 50px;
-        width: 40%;
+        width: 60%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         text-align: center;
         color: #FFF;
     }
@@ -249,9 +254,10 @@
     }
 
     .closeWarningBtn {
-        height: 35px;
-        width: 65px;
-        font-size: 24px;
+        height: 55px;
+        width: 95px;
+        font-size: 30px;
+        margin-top: 10px;
         background-color: white;
     }
 }
@@ -304,6 +310,11 @@
         display: inline-block;
     }
     
+    .back,
+    .front {
+        border-radius: 8px;
+    }
+
     .back {
         background-size: cover;
         background-position: center;
@@ -476,15 +487,21 @@
     }
     
     .modal-content {
-        background-color: midnightblue;
-        opacity: .8;
-        margin: 15% auto;
-        padding: 50px;
-        width: 40%;
+        background-image: url("../images/happysloth.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 1.5% auto;
+        padding: 40px;
+        width: 60%;
+        height: 80%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
+    }
+    
+    .modalQuestion {
+        margin-top: 55vh;
     }
     
     .closeBtn2:hover,
@@ -556,6 +573,11 @@
         display: inline-block;
     }
     
+    .back,
+    .front {
+        border-radius: 8px;
+    }
+
     .back {
         background-size: cover;
         background-position: center;
@@ -729,15 +751,21 @@
     }
     
     .modal-content {
-        background-color: midnightblue;
-        opacity: .8;
-        margin: 15% auto;
-        padding: 50px;
-        width: 40%;
+        background-image: url("../images/happysloth.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 2% auto;
+        padding: 40px;
+        width: 80%;
+        height: 80%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
+    }
+    
+    .modalQuestion {
+        margin-top: 55vh;
     }
     
     .closeBtn2:hover,
@@ -809,7 +837,12 @@
         position: relative;
         display: inline-block;
     }
-    
+
+    .back,
+    .front {
+        border-radius: 8px;
+    }
+
     .back {
         background-size: cover;
         background-position: center;
@@ -984,11 +1017,11 @@
     .modal-content {
         background-color: midnightblue;
         opacity: .8;
-        margin: 15% auto;
+        margin: 50% auto;
         padding: 50px;
-        width: 40%;
+        width: 50%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
-        font-size: 1.5rem;
+        font-size: 2.0rem;
         text-align: center;
         color: #FFF;
     }
@@ -1010,9 +1043,10 @@
     }
 
     .closeWarningBtn {
-        height: 35px;
-        width: 65px;
-        font-size: 24px;
+        height: 45px;
+        width: 85px;
+        font-size: 30px;
+        margin-top: 15px;
         background-color: white;
     }
 }
@@ -1066,6 +1100,11 @@
         display: inline-block;
     }
     
+    .back,
+    .front {
+        border-radius: 8px;
+    }
+
     .back {
         background-size: cover;
         background-position: center;
@@ -1239,17 +1278,23 @@
     }
     
     .modal-content {
-        background-color: midnightblue;
-        opacity: .8;
-        margin: 15% auto;
-        padding: 50px;
+        background-image: url("../images/happysloth.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: auto;
+        padding: 150px;
         width: 40%;
+        height: 100%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
         color: #FFF;
     }
     
+    .modalQuestion {
+        margin-top: 55vh;
+    }
+
     .closeBtn2:hover,
     .resetBtn:hover,
     .closeBtn:hover {
