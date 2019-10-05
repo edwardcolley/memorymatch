@@ -490,7 +490,7 @@
         background-image: url("../images/happysloth.jpg");
         background-repeat: no-repeat;
         background-position: center;
-        margin: 1.5% auto;
+        margin: 5% auto;
         padding: 40px;
         width: 60%;
         height: 80%;
@@ -754,7 +754,7 @@
         background-image: url("../images/happysloth.jpg");
         background-repeat: no-repeat;
         background-position: center;
-        margin: 2% auto;
+        margin: 7% auto;
         padding: 40px;
         width: 80%;
         height: 80%;
@@ -1282,7 +1282,7 @@
         background-repeat: no-repeat;
         background-position: center;
         margin: auto;
-        padding: 150px;
+        padding: 100px;
         width: 40%;
         height: 100%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
