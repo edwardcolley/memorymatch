@@ -287,6 +287,22 @@
         justify-content: center;
         align-items: center;
     }
+
+    .mobileModalHeader {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .modalText {
+        padding-top: 38%;
+        font-size: 16px;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
+    }
     
     .container {
         display: inline-block;
@@ -490,6 +506,7 @@
         background-image: url("../images/happysloth.jpg");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         margin: 5% auto;
         padding: 40px;
         width: 60%;
@@ -526,6 +543,8 @@
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* tablet landscape */
+
     body {
         height: 100vh;
         background-image: url("../images/threetoedslothreserve-855x425@2x.jpg");
@@ -535,6 +554,16 @@
         background-size: cover;
         overflow: hidden;
         
+    }
+
+    .modalText {
+        padding-top: 55%;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
     }
     
     header {
@@ -754,6 +783,7 @@
         background-image: url("../images/happysloth.jpg");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         margin: 7% auto;
         padding: 40px;
         width: 80%;
@@ -1077,6 +1107,22 @@
         justify-content: center;
         align-items: center;
     }
+
+    .mobileModalHeader {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .modalText {
+        padding-top: 70%;
+        font-size: 24px;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
+    }
     
     .container {
         display: inline-block;
@@ -1281,10 +1327,12 @@
         background-image: url("../images/happysloth.jpg");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         margin: auto;
+        margin-top: 5%;
         padding: 100px;
         width: 40%;
-        height: 100%;
+        height: 75%;
         box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
         font-size: 1.5rem;
         text-align: center;
