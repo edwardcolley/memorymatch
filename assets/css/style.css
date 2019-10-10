@@ -120,11 +120,11 @@
     }
     .card1,
     .card10{
-        background-image: url("../images/sloth2.jpg");
+        background-image: url("../images/sloth2-1.jpg");
     }
     .card2,
     .card11{
-        background-image: url("../images/sloth3.jpg");
+        background-image: url("../images/sloth3-2.jpg");
     }
     .card3,
     .card12{
@@ -132,7 +132,7 @@
     }
     .card4,
     .card13{
-        background-image: url("../images/sloth5.jpg");
+        background-image: url("../images/sloth5-2.jpg");
     }
     .card5,
     .card14{
@@ -140,19 +140,19 @@
     }
     .card6,
     .card15 {
-        background-image: url("../images/sloth7.jpg");
+        background-image: url("../images/sloth7-2.jpg");
     }
     .card7,
     .card16 {
-        background-image: url("../images/sloth8.jpg");
+        background-image: url("../images/sloth8-2.jpg");
     }
     .card8,
     .card17 {
-        background-image: url("../images/sloth9.jpg");
+        background-image: url("../images/sloth9-2.jpg");
     }
     .card9,
     .card18 {
-        background-image: url("../images/sloth10.jpg");
+        background-image: url("../images/sloth10-2.jpg");
     }
     .gif {
         position: relative;
@@ -399,11 +399,11 @@
     }
     .card1,
     .card10{
-        background-image: url("../images/sloth2.jpg");
+        background-image: url("../images/sloth2-1.jpg");
     }
     .card2,
     .card11{
-        background-image: url("../images/sloth3.jpg");
+        background-image: url("../images/sloth3-2.jpg");
     }
     .card3,
     .card12{
@@ -411,7 +411,7 @@
     }
     .card4,
     .card13{
-        background-image: url("../images/sloth5.jpg");
+        background-image: url("../images/sloth5-2.jpg");
     }
     .card5,
     .card14{
@@ -419,19 +419,19 @@
     }
     .card6,
     .card15 {
-        background-image: url("../images/sloth7.jpg");
+        background-image: url("../images/sloth7-2.jpg");
     }
     .card7,
     .card16 {
-        background-image: url("../images/sloth8.jpg");
+        background-image: url("../images/sloth8-2.jpg");
     }
     .card8,
     .card17 {
-        background-image: url("../images/sloth9.jpg");
+        background-image: url("../images/sloth9-2.jpg");
     }
     .card9,
     .card18 {
-        background-image: url("../images/sloth10.jpg");
+        background-image: url("../images/sloth10-2.jpg");
     }
     .gif {
         position: relative;
@@ -550,7 +550,11 @@
     }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
     /* tablet landscape */
 
     body {
@@ -675,11 +679,11 @@
     }
     .card1,
     .card10{
-        background-image: url("../images/sloth2.jpg");
+        background-image: url("../images/sloth2-1.jpg");
     }
     .card2,
     .card11{
-        background-image: url("../images/sloth3.jpg");
+        background-image: url("../images/sloth3-2.jpg");
     }
     .card3,
     .card12{
@@ -687,7 +691,7 @@
     }
     .card4,
     .card13{
-        background-image: url("../images/sloth5.jpg");
+        background-image: url("../images/sloth5-2.jpg");
     }
     .card5,
     .card14{
@@ -695,19 +699,19 @@
     }
     .card6,
     .card15 {
-        background-image: url("../images/sloth7.jpg");
+        background-image: url("../images/sloth7-2.jpg");
     }
     .card7,
     .card16 {
-        background-image: url("../images/sloth8.jpg");
+        background-image: url("../images/sloth8-2.jpg");
     }
     .card8,
     .card17 {
-        background-image: url("../images/sloth9.jpg");
+        background-image: url("../images/sloth9-2.jpg");
     }
     .card9,
     .card18 {
-        background-image: url("../images/sloth10.jpg");
+        background-image: url("../images/sloth10-2.jpg");
     }
     .gif {
         position: relative;
@@ -827,7 +831,11 @@
     }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
 
     body {
         height: 100vh;
@@ -941,11 +949,11 @@
     }
     .card1,
     .card10{
-        background-image: url("../images/sloth2.jpg");
+        background-image: url("../images/sloth2-1.jpg");
     }
     .card2,
     .card11{
-        background-image: url("../images/sloth3.jpg");
+        background-image: url("../images/sloth3-2.jpg");
     }
     .card3,
     .card12{
@@ -953,7 +961,7 @@
     }
     .card4,
     .card13{
-        background-image: url("../images/sloth5.jpg");
+        background-image: url("../images/sloth5-2.jpg");
     }
     .card5,
     .card14{
@@ -961,19 +969,19 @@
     }
     .card6,
     .card15 {
-        background-image: url("../images/sloth7.jpg");
+        background-image: url("../images/sloth7-2.jpg");
     }
     .card7,
     .card16 {
-        background-image: url("../images/sloth8.jpg");
+        background-image: url("../images/sloth8-2.jpg");
     }
     .card8,
     .card17 {
-        background-image: url("../images/sloth9.jpg");
+        background-image: url("../images/sloth9-2.jpg");
     }
     .card9,
     .card18 {
-        background-image: url("../images/sloth10.jpg");
+        background-image: url("../images/sloth10-2.jpg");
     }
     .gif {
         position: relative;
@@ -1219,11 +1227,11 @@
     }
     .card1,
     .card10{
-        background-image: url("../images/sloth2.jpg");
+        background-image: url("../images/sloth2-1.jpg");
     }
     .card2,
     .card11{
-        background-image: url("../images/sloth3.jpg");
+        background-image: url("../images/sloth3-2.jpg");
     }
     .card3,
     .card12{
@@ -1231,7 +1239,7 @@
     }
     .card4,
     .card13{
-        background-image: url("../images/sloth5.jpg");
+        background-image: url("../images/sloth5-2.jpg");
     }
     .card5,
     .card14{
@@ -1239,19 +1247,19 @@
     }
     .card6,
     .card15 {
-        background-image: url("../images/sloth7.jpg");
+        background-image: url("../images/sloth7-2.jpg");
     }
     .card7,
     .card16 {
-        background-image: url("../images/sloth8.jpg");
+        background-image: url("../images/sloth8-2.jpg");
     }
     .card8,
     .card17 {
-        background-image: url("../images/sloth9.jpg");
+        background-image: url("../images/sloth9-2.jpg");
     }
     .card9,
     .card18 {
-        background-image: url("../images/sloth10.jpg");
+        background-image: url("../images/sloth10-2.jpg");
     }
     .gif {
         position: relative;
