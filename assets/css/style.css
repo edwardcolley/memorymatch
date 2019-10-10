@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-@media only screen and (max-device-width : 480px) {
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
     body {
         height: 100vh;
         background-image: url("../images/threetoedslothreserve-855x425@2x.jpg");
@@ -262,7 +266,11 @@
     }
 }
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 767px){
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
     body {
         height: 100vh;
         background-image: url("../images/threetoedslothreserve-855x425@2x.jpg");
