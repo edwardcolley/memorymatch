@@ -271,6 +271,7 @@
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
+      -ms-transform: translate3d(...);
     body {
         height: 100vh;
         background-image: url("../images/threetoedslothreserve-855x425@2x.jpg");
@@ -1216,6 +1217,7 @@
     
     .flip-card-back {
         transform: rotateY(180deg);
+        z-index: 1;
     }
     
     input {
