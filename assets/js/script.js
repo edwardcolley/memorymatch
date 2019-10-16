@@ -5,7 +5,7 @@ var secondCardClicked = null;
 var matched = null;
 var max_matches = 1;
 var attempts = 0;
-var games_played = null;
+var games_played = 1;
 var check1 = null;
 var check2 = null;
 
@@ -21,7 +21,6 @@ function initializeApp() {
 function handleCardClick(event) {
 
     if (firstCardClicked === null) {
-        console.log(event)
         check1 = event.target.parentElement
         $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
@@ -120,7 +119,7 @@ function calculateAccuracy() {
 
 function resetStats() {
     matched = null;
-    attempts = null;
+    attempts = 0;
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
