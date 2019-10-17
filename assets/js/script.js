@@ -3,7 +3,7 @@ $(document).ready(initializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matched = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var games_played = 1;
 var check1 = null;
@@ -15,6 +15,7 @@ function initializeApp() {
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeBtn2').on('click', closeModalDone);
+    $('.closeBtn3').on('click', closeLosingModal);
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
@@ -93,6 +94,14 @@ function displayStatsWithoutAccuracy() {
 
 function openModal() {
     $('#winningModal').removeClass('hidden');
+}
+
+function losingModal() {
+    $('#losingModal').removeClass('hidden');
+}
+
+function closeLosingModal() {
+    $('#losingModal').addClass('hidden');
 }
 
 function closeModal() {
@@ -184,9 +193,10 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.text(minutes + ":" + seconds);
-
+        console.log(timer);
         if (--timer < 0) {
-            timer = duration;
+            losingModal();
+            display.text("0:00");
         }
     }, 1000);
 }
