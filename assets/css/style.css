@@ -470,7 +470,7 @@
         margin-left: 10%;
         margin-top: 10%;
         width: 80%;
-        font-size: .65rem;
+        font-size: .95rem;
         background-color: midnightblue;
         color: white;
         opacity: 0.7;
@@ -511,8 +511,16 @@
         border-radius: 30px;
     }
     
+    .modal-content2 {
+        background-image: url("../images/sadsloth.png");
+    }
+
     .modal-content {
         background-image: url("../images/happysloth.jpg");
+    }
+
+    .modal-content2,
+    .modal-content {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -548,6 +556,22 @@
 
     #warningModal {
         display: none;
+    }
+
+    .timeParent {
+        margin-top: 14%;
+        text-align: center;
+    }
+
+    #time {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
     }
 }
 
@@ -717,7 +741,6 @@
     .gif {
         position: relative;
         left: 5%;
-        top: 5%;
     }
     .sloth_gif {
         width: 95%;
@@ -751,7 +774,7 @@
         margin-left: 10%;
         margin-top: 10%;
         width: 80%;
-        font-size: 20;
+        font-size: 20px;
         background-color: midnightblue;
         color: white;
         opacity: 0.7;
@@ -792,8 +815,17 @@
         border-radius: 30px;
     }
     
+
+    .modal-content2 {
+        background-image: url("../images/sadsloth.png");
+    }
+
     .modal-content {
         background-image: url("../images/happysloth.jpg");
+    }
+
+    .modal-content2,
+    .modal-content {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -829,6 +861,22 @@
 
     #warningModal {
         display: none;
+    }
+
+    .timeParent {
+        margin-top: 20%;
+        text-align: center;
+    }
+
+    #time {
+        display: inline-block;
+        font-size: 2rem;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
     }
 }
 
@@ -1096,6 +1144,7 @@
         margin-top: 15px;
         background-color: white;
     }
+
 }
 
 @media only screen and (min-device-width: 1025px) {
@@ -1265,11 +1314,11 @@
     }
     .gif {
         position: relative;
-        top: -5%;
-        left: 12%;
+        top: -4%;
+        left: 14%;
     }
     .sloth_gif {
-        width: 75%;
+        width: 70%;
     }
     aside {
         background-color: rgba(131, 212, 225, .4);
@@ -1341,8 +1390,16 @@
         border-radius: 30px;
     }
     
+    .modal-content2 {
+        background-image: url("../images/sadsloth.png");
+    }
+
     .modal-content {
         background-image: url("../images/happysloth.jpg");
+    }
+
+    .modal-content2,
+    .modal-content {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -1396,5 +1453,6 @@
         text-decoration: none solid midnightblue;
         text-transform: capitalize;
     }
+
 }
 
