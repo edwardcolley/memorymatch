@@ -1266,10 +1266,10 @@
     .gif {
         position: relative;
         top: -5%;
-        left: 5%;
+        left: 12%;
     }
     .sloth_gif {
-        width: 89%;
+        width: 75%;
     }
     aside {
         background-color: rgba(131, 212, 225, .4);
@@ -1379,6 +1379,22 @@
 
     #warningModal {
         display: none;
+    }
+    
+    .timeParent {
+        margin-top: 8%;
+        text-align: center;
+    }
+
+    #time {
+        display: inline-block;
+        font-size: 2rem;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px #1C6EA4;
+        font-weight: 700;
+        text-decoration: none solid midnightblue;
+        text-transform: capitalize;
     }
 }
 
