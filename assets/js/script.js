@@ -50,19 +50,28 @@ function handleCardClick(event) {
         if (backCard2 === backCard) {
             
             playRightSound();
+            $('#slothGif').addClass('spinAnimate');
+            setTimeout(function () {
+                $('#slothGif').removeClass('spinAnimate');
+            }, 700)
             matched++;
             displayStats();
             if (matched === null) {
                 var interval = 1050;
             } else {
-                var numeric = parseInt('1' + matched + '00');
+                var increase = matched * 300;
+                var numeric = 1000 + increase;
                 var interval = numeric;
+                console.log('interval: ', interval);
             }
             startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
+            $('#slothGif').addClass('shakeAnimate');
             setTimeout(function () {
-                console.log(check1, check2);
+                $('#slothGif').removeClass('shakeAnimate');
+            }, 700)
+            setTimeout(function () {
                 flipCardBack(check1, check2);
             }, 1000)
             displayStats();
@@ -80,6 +89,7 @@ function handleCardClick(event) {
         if (matched === max_matches) {
             games_played++;
             openModal();
+            clearInterval(timer2);
         } 
     }
 };
