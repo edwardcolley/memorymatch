@@ -8,10 +8,10 @@ var attempts = 0;
 var games_played = 1;
 var check1 = null;
 var check2 = null;
+var timer2 = null;
 
 function initializeApp() {
-    var twoMinutes = 60 * 2,
-        display = $('#time');
+    var twoMinutes = 60 * 2;
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeBtn2').on('click', closeModalDone);
@@ -19,7 +19,7 @@ function initializeApp() {
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
-    startTimer(twoMinutes, display);
+    startTimer(twoMinutes, $('#time'), 1000);
 }
 
 function handleCardClick(event) {
@@ -44,6 +44,15 @@ function handleCardClick(event) {
         attempts++;
 
         if (backCard2 === backCard) {
+            if (matched === null) {
+                var interval = 1000;
+            } else {
+                var numeric = parseInt(matched + '300');
+                console.log('numeric: ', numeric);
+                var interval = numeric;
+            }
+            startTimer(currentCount(), $('#time'), interval);
+            console.log('interval, matches: ', interval, matched);
             playRightSound();
             matched++;
             firstCardClicked = null;
@@ -132,9 +141,11 @@ function calculateAccuracy() {
 function resetStats() {
     matched = null;
     attempts = 0;
+    var twoMinutes = 60 * 2;
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
+    startTimer(twoMinutes, $('#time'), 1000);
     
 }
 
@@ -183,9 +194,10 @@ function playRightSound() {
     ding.play();
 }
 
-function startTimer(duration, display) {
+function startTimer(duration, display, interval) {
+    console.log('function did run');
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    timer2 = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -193,10 +205,23 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.text(minutes + ":" + seconds);
-        console.log(timer);
         if (--timer < 0) {
             losingModal();
             display.text("0:00");
         }
-    }, 1000);
+    }, interval);
+    console.log(timer2)
+}
+
+function currentCount() {
+    console.log('currentCount did run');
+    var count = $('#time').text();
+    var minutes = parseInt(count[1]);
+    var seconds = parseInt(count[3] + count[4]);
+    var minutesToSeconds = minutes * 60;
+    var totalSeconds = minutesToSeconds + seconds;
+    clearInterval(timer2);
+    $('#time').empty();
+
+    return totalSeconds;
 }
