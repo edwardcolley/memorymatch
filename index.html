@@ -10,12 +10,12 @@
 
 <body>
     <header>Super Sloth Memory Match</header>
-
     <aside>
         <div class="aside_title">Stats</div>
-        <div class="resetContainer">    
+        <div class="resetContainer">  
          <button class="resetBtn">Reset Game</button>
         </div>
+        
         <div class="aside_div">
             <p>Games Played:</p>
             <p id="games_played">1</p>
@@ -28,8 +28,11 @@
             <p>Accuracy:</p>
             <p id="accuracy">0%</p>
         </div>
+        <div class="timeParent">
+                <div id="time"></div>
+            </div>
         <div class="gif">
-            <img src="./assets/images/slothgif.gif" class="sloth_gif">
+            <img id="slothGif" src="./assets/images/slothgif.gif" class="sloth_gif">
         </div>
     </aside>
 
@@ -183,6 +186,17 @@
 
         </div>
 
+        <div id="losingModal" class="modal hidden">
+            <div class="losing modal-content2">
+                <div class="modalText HeadermodalQuestion">
+                  <h1><span class="mobileModalHeader">You lose!</span></h1>
+                    <p>Would you like to play again?</p>
+                    <div>
+                        <button class="resetBtn">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 </body>
