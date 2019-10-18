@@ -62,7 +62,6 @@ function handleCardClick(event) {
                 var increase = matched * 300;
                 var numeric = 1000 + increase;
                 var interval = numeric;
-                console.log('interval: ', interval);
             }
             startTimer(currentCount(), $('#time'), interval);
         } else {
