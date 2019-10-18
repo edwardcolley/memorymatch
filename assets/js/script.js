@@ -11,7 +11,7 @@ var check2 = null;
 var timer2 = null;
 
 function initializeApp() {
-    // var minutes = 60 * 1;
+    var minutes = 60 * 1;
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeBtn2').on('click', closeModalDone);
@@ -19,7 +19,7 @@ function initializeApp() {
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
-    // startTimer(minutes, $('#time'), 1000);
+    startTimer(minutes, $('#time'), 1000);
 }
 
 function handleCardClick(event) {
@@ -32,6 +32,10 @@ function handleCardClick(event) {
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
+        $('.front').off("click")
+        setTimeout(function () {
+            $('.front').on("click", handleCardClick);
+        }, 300)
 
     } else if (secondCardClicked === null) {
         check2 = event.currentTarget.parentElement
@@ -40,6 +44,7 @@ function handleCardClick(event) {
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
         attempts++;
+        $('.front').off("click")
         
 
         if (backCard2 === backCard) {
@@ -47,16 +52,17 @@ function handleCardClick(event) {
             playRightSound();
             matched++;
             displayStats();
-            // if (matched === null) {
-            //     var interval = 1100;
-            // } else {
-            //     var numeric = parseInt(matched + '100');
-            //     var interval = numeric;
-            // }
-            // startTimer(currentCount(), $('#time'), interval);
+            if (matched === null) {
+                var interval = 1050;
+            } else {
+                var numeric = parseInt('1' + matched + '00');
+                var interval = numeric;
+            }
+            startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
             setTimeout(function () {
+                console.log(check1, check2);
                 flipCardBack(check1, check2);
             }, 1000)
             displayStats();
@@ -67,6 +73,9 @@ function handleCardClick(event) {
 
         firstCardClicked = null;
         secondCardClicked = null;
+        setTimeout(function () {
+            $('.front').on("click", handleCardClick);
+        }, 1500)
 
         if (matched === max_matches) {
             games_played++;
@@ -142,7 +151,7 @@ function resetStats() {
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
-    // startTimer(minutes, $('#time'), 1000);
+    startTimer(minutes, $('#time'), 1000);
     
 }
 
