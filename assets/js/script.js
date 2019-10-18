@@ -8,10 +8,10 @@ var attempts = 0;
 var games_played = 1;
 var check1 = null;
 var check2 = null;
+var timer2 = null;
 
 function initializeApp() {
-    var twoMinutes = 60 * 2,
-        display = $('#time');
+    var minutes = 60 * 1;
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeBtn2').on('click', closeModalDone);
@@ -19,57 +19,81 @@ function initializeApp() {
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
-    startTimer(twoMinutes, display);
+    startTimer(minutes, $('#time'), 1000);
 }
 
 function handleCardClick(event) {
 
+    $(event.currentTarget).off("click");
+
     if (firstCardClicked === null) {
-        check1 = event.target.parentElement
+        check1 = event.currentTarget.parentElement
         $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
-        $(event.target).off("click");
+        $('.front').off("click")
         setTimeout(function () {
-            $(event.target).on('click', handleCardClick)
-        }, 1000)
+            $('.front').on("click", handleCardClick);
+        }, 300)
 
     } else if (secondCardClicked === null) {
-        check2 = event.target.parentElement
+        check2 = event.currentTarget.parentElement
         $(check2).addClass('flipaction');
         secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
         attempts++;
+        $('.front').off("click")
+        
 
         if (backCard2 === backCard) {
+            
             playRightSound();
+            $('#slothGif').addClass('spinAnimate');
+            setTimeout(function () {
+                $('#slothGif').removeClass('spinAnimate');
+            }, 700)
             matched++;
-            firstCardClicked = null;
-            secondCardClicked = null;
             displayStats();
+            if (matched === null) {
+                var interval = 1050;
+            } else {
+                var increase = matched * 300;
+                var numeric = 1000 + increase;
+                var interval = numeric;
+            }
+            startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
-            $('.front').off("click");
+            $('#slothGif').addClass('shakeAnimate');
             setTimeout(function () {
-                flipCardBack();
-                $('.front').on('click', handleCardClick);
-                firstCardClicked = null;
-                secondCardClicked = null;
+                $('#slothGif').removeClass('shakeAnimate');
+            }, 700)
+            setTimeout(function () {
+                flipCardBack(check1, check2);
             }, 1000)
             displayStats();
+            firstCardClicked.on('click', handleCardClick);
+            secondCardClicked.on('click', handleCardClick);
 
         }
+
+        firstCardClicked = null;
+        secondCardClicked = null;
+        setTimeout(function () {
+            $('.front').on("click", handleCardClick);
+        }, 1500)
 
         if (matched === max_matches) {
             games_played++;
             openModal();
-        }
+            clearInterval(timer2);
+        } 
     }
 };
 
-function flipCardBack() {
+function flipCardBack(first, second) {
     $(check1).removeClass('flipaction');
     $(check2).removeClass('flipaction');
 }
@@ -132,9 +156,11 @@ function calculateAccuracy() {
 function resetStats() {
     matched = null;
     attempts = 0;
+    var minutes = 60 * 1;
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
+    startTimer(minutes, $('#time'), 1000);
     
 }
 
@@ -142,6 +168,7 @@ function shuffleCards() {
     var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
+        return cardArray;
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -183,9 +210,9 @@ function playRightSound() {
     ding.play();
 }
 
-function startTimer(duration, display) {
+function startTimer(duration, display, interval) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    timer2 = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -193,10 +220,21 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.text(minutes + ":" + seconds);
-        console.log(timer);
         if (--timer < 0) {
             losingModal();
             display.text("0:00");
         }
-    }, 1000);
+    }, interval);
+}
+
+function currentCount() {
+    var count = $('#time').text();
+    var minutes = parseInt(count[1]);
+    var seconds = parseInt(count[3] + count[4]);
+    var minutesToSeconds = minutes * 60;
+    var totalSeconds = minutesToSeconds + seconds;
+    clearInterval(timer2);
+    $('#time').empty();
+
+    return totalSeconds;
 }
