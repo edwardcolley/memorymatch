@@ -11,7 +11,7 @@ var check2 = null;
 var timer2 = null;
 
 function initializeApp() {
-    var twoMinutes = 60 * 2;
+    // var minutes = 60 * 1;
     $('.front').on('click', handleCardClick);
     $('.closeBtn').on('click', closeModal);
     $('.closeBtn2').on('click', closeModalDone);
@@ -19,66 +19,63 @@ function initializeApp() {
     $('.closeWarningBtn').on('click', closeWarningModal);
     $('.resetBtn').on('click', resetGame);
     placeShuffledCards();
-    startTimer(twoMinutes, $('#time'), 1000);
+    // startTimer(minutes, $('#time'), 1000);
 }
 
 function handleCardClick(event) {
 
+    $(event.currentTarget).off("click");
+
     if (firstCardClicked === null) {
-        check1 = event.target.parentElement
+        check1 = event.currentTarget.parentElement
         $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
         siblings = firstCardClicked.siblings();
         backCard = siblings.css('background-image');
-        $(event.target).off("click");
-        setTimeout(function () {
-            $(event.target).on('click', handleCardClick)
-        }, 1000)
 
     } else if (secondCardClicked === null) {
-        check2 = event.target.parentElement
+        check2 = event.currentTarget.parentElement
         $(check2).addClass('flipaction');
         secondCardClicked = $(event.currentTarget)
         siblings2 = secondCardClicked.siblings();
         backCard2 = siblings2.css('background-image');
         attempts++;
+        
 
         if (backCard2 === backCard) {
-            if (matched === null) {
-                var interval = 1000;
-            } else {
-                var numeric = parseInt(matched + '300');
-                console.log('numeric: ', numeric);
-                var interval = numeric;
-            }
-            startTimer(currentCount(), $('#time'), interval);
-            console.log('interval, matches: ', interval, matched);
+            
             playRightSound();
             matched++;
-            firstCardClicked = null;
-            secondCardClicked = null;
             displayStats();
+            // if (matched === null) {
+            //     var interval = 1100;
+            // } else {
+            //     var numeric = parseInt(matched + '100');
+            //     var interval = numeric;
+            // }
+            // startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
-            $('.front').off("click");
             setTimeout(function () {
-                flipCardBack();
-                $('.front').on('click', handleCardClick);
-                firstCardClicked = null;
-                secondCardClicked = null;
+                flipCardBack(check1, check2);
             }, 1000)
             displayStats();
+            firstCardClicked.on('click', handleCardClick);
+            secondCardClicked.on('click', handleCardClick);
 
         }
+
+        firstCardClicked = null;
+        secondCardClicked = null;
 
         if (matched === max_matches) {
             games_played++;
             openModal();
-        }
+        } 
     }
 };
 
-function flipCardBack() {
+function flipCardBack(first, second) {
     $(check1).removeClass('flipaction');
     $(check2).removeClass('flipaction');
 }
@@ -141,11 +138,11 @@ function calculateAccuracy() {
 function resetStats() {
     matched = null;
     attempts = 0;
-    var twoMinutes = 60 * 2;
+    var minutes = 60 * 1;
     displayStatsWithoutAccuracy();
     $('div').removeClass("flipaction")
     resetShuffledCards();
-    startTimer(twoMinutes, $('#time'), 1000);
+    // startTimer(minutes, $('#time'), 1000);
     
 }
 
@@ -153,6 +150,7 @@ function shuffleCards() {
     var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
+        return cardArray;
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -195,7 +193,6 @@ function playRightSound() {
 }
 
 function startTimer(duration, display, interval) {
-    console.log('function did run');
     var timer = duration, minutes, seconds;
     timer2 = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -210,11 +207,9 @@ function startTimer(duration, display, interval) {
             display.text("0:00");
         }
     }, interval);
-    console.log(timer2)
 }
 
 function currentCount() {
-    console.log('currentCount did run');
     var count = $('#time').text();
     var minutes = parseInt(count[1]);
     var seconds = parseInt(count[3] + count[4]);
