@@ -35,7 +35,7 @@ function handleCardClick(event) {
         $('.front').off("click")
         setTimeout(function () {
             $('.front').on("click", handleCardClick);
-        }, 300)
+        }, 500)
 
     } else if (secondCardClicked === null) {
         check2 = event.currentTarget.parentElement
@@ -48,7 +48,6 @@ function handleCardClick(event) {
         
 
         if (backCard2 === backCard) {
-            
             playRightSound();
             $('#slothGif').addClass('spinAnimate');
             setTimeout(function () {
@@ -168,7 +167,6 @@ function shuffleCards() {
     var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
-
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
