@@ -55,14 +55,14 @@ function handleCardClick(event) {
             }, 700)
             matched++;
             displayStats();
-            if (matched === null) {
-                var interval = 1050;
-            } else {
-                var increase = matched * 300;
-                var numeric = 1000 + increase;
-                var interval = numeric;
-            }
-            startTimer(currentCount(), $('#time'), interval);
+            // if (matched === null) {
+            //     var interval = 1050;
+            // } else {
+            //     var increase = matched * 300;
+            //     var numeric = 1000 + increase;
+            //     var interval = numeric;
+            // }
+            // startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
             $('#slothGif').addClass('shakeAnimate');
