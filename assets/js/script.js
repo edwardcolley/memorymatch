@@ -64,7 +64,7 @@ function handleCardClick(event) {
                 var numeric = 1000 + increase;
                 var interval = numeric;
             }
-            // debugger;
+
             startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
@@ -168,7 +168,7 @@ function shuffleCards() {
     var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
-    return cardArray;
+
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -225,7 +225,8 @@ function startTimer(duration, display, interval) {
         display.text(minutes + ":" + seconds);
         if (--timer < 0) {
             losingModal();
-            display.text("00:00");
+            clearInterval(timer2);
+            $('#time').text("00:00");
         }
     }, interval);
 }
