@@ -37,7 +37,7 @@ function handleCardClick(event) {
         $('.front').off("click")
         setTimeout(function () {
             $('.front').on("click", handleCardClick);
-        }, 500)
+        }, 400)
 
     } else if (secondCardClicked === null) {
         check2 = event.currentTarget.parentElement
@@ -64,6 +64,7 @@ function handleCardClick(event) {
                 var numeric = 1000 + increase;
                 var interval = numeric;
             }
+            // debugger;
             startTimer(currentCount(), $('#time'), interval);
         } else {
             playWrongSound();
@@ -167,6 +168,7 @@ function shuffleCards() {
     var cardArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9',
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
+    return cardArray;
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -208,6 +210,10 @@ function playRightSound() {
 }
 
 function startTimer(duration, display, interval) {
+    var intervalText = '00:' + duration;
+    clearInterval(timer2);
+    $('#time').empty();
+    $('#time').text(`${intervalText}`)
     var timer = duration, minutes, seconds;
     timer2 = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -230,8 +236,9 @@ function currentCount() {
     var seconds = parseInt(count[3] + count[4]);
     var minutesToSeconds = minutes * 60;
     var totalSeconds = minutesToSeconds + seconds;
-    clearInterval(timer2);
-    $('#time').empty();
+    // clearInterval(timer2);
+    // $('#time').empty();
 
     return totalSeconds;
+    
 }
