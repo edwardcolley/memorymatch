@@ -23,10 +23,12 @@ function initializeApp() {
 }
 
 function handleCardClick(event) {
-
+    
     $(event.currentTarget).off("click");
-
+    event.preventDefault();
+    console.log("event.currentTarget: ", event.currentTarget);
     if (firstCardClicked === null) {
+        
         check1 = event.currentTarget.parentElement
         $(check1).addClass('flipaction');
         firstCardClicked = $(event.currentTarget)
@@ -73,8 +75,6 @@ function handleCardClick(event) {
                 flipCardBack(check1, check2);
             }, 1000)
             displayStats();
-            firstCardClicked.on('click', handleCardClick);
-            secondCardClicked.on('click', handleCardClick);
 
         }
 
@@ -168,7 +168,6 @@ function shuffleCards() {
         'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17',
         'card18'];
     var currentIndex = cardArray.length, temporaryValue, randomIndex;
-
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
