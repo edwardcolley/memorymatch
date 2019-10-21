@@ -225,7 +225,7 @@ function startTimer(duration, display, interval) {
         display.text(minutes + ":" + seconds);
         if (--timer < 0) {
             losingModal();
-            display.text("0:00");
+            display.text("00:00");
         }
     }, interval);
 }
