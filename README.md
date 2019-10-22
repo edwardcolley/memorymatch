@@ -11,7 +11,7 @@ A sloth-themed memory match game with real-time statistic generation. It is play
 # Initial Setup
 
 1. Fork this repo and clone from the terminal.
-- $ git clone https://github.com/edwardcolley/memorymatch.git
+- `$ git clone https://github.com/edwardcolley/memorymatch.git`
 
 2. Navigate into cloned directory and be on the master branch.
 
