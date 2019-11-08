@@ -237,8 +237,6 @@ function currentCount() {
     var seconds = parseInt(count[3] + count[4]);
     var minutesToSeconds = minutes * 60;
     var totalSeconds = minutesToSeconds + seconds;
-    // clearInterval(timer2);
-    // $('#time').empty();
 
     return totalSeconds;
     
