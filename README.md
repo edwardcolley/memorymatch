@@ -17,6 +17,6 @@ A sloth-themed memory match game with real-time statistic generation. It is play
 
 3. Open the index.html in your default browser.
 
-(memory_match/assets/images/memoryMatch.png)
+(/assets/images/memoryMatch.png)
 
 
